@@ -11,6 +11,7 @@
   gather_facts: no
   roles:
     - common
+    - java
 
 # - hosts: web
 #   gather_facts: no

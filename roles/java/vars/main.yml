@@ -1,0 +1,10 @@
+---
+
+java_version: "1.7.0_25"
+
+deb_name: "http://www.duinsoft.nl/pkg debs all"
+recv_keys: 5CB26B26
+package_name: update-sun-jre
+
+rpm_name: "http://download.oracle.com/otn-pub/java/jdk/7u25-b15/jdk-7u25-linux-x64.rpm"
+

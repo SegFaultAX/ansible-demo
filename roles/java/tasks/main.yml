@@ -1,0 +1,13 @@
+---
+
+- name: check java version
+  shell: "java -version 2>&1"
+  register: java_installed_version
+  ignore_errors: yes
+  changed_when: no
+
+- include: ubuntu.yml
+  when: java_installed_version.stdout.find('{{ java_version }}') == -1 and ansible_distribution == 'Ubuntu'
+
+- include: centos.yml
+  when: java_installed_version.stdout.find('{{ java_version }}') == -1 and ansible_distribution == 'CentOS'
