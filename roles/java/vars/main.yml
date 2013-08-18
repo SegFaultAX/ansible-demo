@@ -1,10 +1,14 @@
 ---
 
-java_version: "1.7.0_25"
+java_version_major: "7"
+java_version_patch: "25"
+java_version_build: "15"
+
+java_version: "1.{{ java_version_major }}.0_{{ java_version_patch }}"
+java_version_short: "{{ java_version_major }}u{{ java_version_patch }}"
 
 deb_name: "http://www.duinsoft.nl/pkg debs all"
 recv_keys: 5CB26B26
 package_name: update-sun-jre
 
-rpm_name: "http://download.oracle.com/otn-pub/java/jdk/7u25-b15/jdk-7u25-linux-x64.rpm"
-
+java_rpm: "http://download.oracle.com/otn-pub/java/jdk/{{ java_version_short }}-b{{ java_version_build }}/jdk-{{ java_version_short }}-linux-x64.rpm"

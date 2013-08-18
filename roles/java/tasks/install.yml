@@ -1,17 +1,24 @@
 ---
 
+# Ubuntu Install
 # Manually add key server
 # http://www.duinsoft.nl/packages.php?t=en
 
 - name: register deb source
   template: src=apt-sources dest=/etc/apt/sources.list.d/update-java.list
             owner=root group=root mode=644
+  when: ansible_distribution == 'Ubuntu'
   tags: java
 
 - name: fetch key from server
   shell: apt-key adv --keyserver keys.gnupg.net --recv-keys {{ recv_keys }}
+  when: ansible_distribution == 'Ubuntu'
   tags: java
 
 - name: install java jre
-  apt: pkg={{ package_name }} update_cache=yes state=latest
+  apt: pkg={{ package_name }} state=latest
+  when: ansible_distribution == 'Ubuntu'
   tags: java
+
+# CentOS Install
+# localinstall rpm
