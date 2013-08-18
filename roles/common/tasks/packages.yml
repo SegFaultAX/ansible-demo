@@ -1,0 +1,39 @@
+---
+
+# Ubuntu packages
+
+- name: upgrade packages
+  apt: update_cache=yes cache_valid_time=3600 upgrade=full
+  when: ansible_distribution == 'Ubuntu'
+  tags: packages
+
+- name: install required packages
+  apt: pkg={{ item }} state=present
+  with_items: install_ubuntu_packages
+  when: ansible_distribution == 'Ubuntu'
+  tags: packages
+
+- name: remove unused packages
+  apt: pkg={{ item }} state=absent
+  with_items: remove_ubuntu_packages
+  when: ansible_distribution == 'Ubuntu'
+  tags: packages
+
+# CentOS packages
+
+- name: upgrade packages
+  yum: "name=* state=latest"
+  when: ansible_distribution == 'CentOS'
+  tags: packages
+
+- name: install required packages
+  yum: name={{ item }} state=present
+  with_items: install_centos_packages
+  when: ansible_distribution == 'CentOS'
+  tags: packages
+
+- name: remove unused packages
+  yum: name={{ item }} state=absent
+  with_items: remove_centos_packages
+  when: ansible_distribution == 'CentOS'
+  tags: packages

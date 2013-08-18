@@ -1,0 +1,23 @@
+---
+
+- name: Gathering facts
+  hosts: all
+  gather_facts: yes
+  tasks:
+    - group_by: key={{ ansible_distribution }}
+
+- hosts: all
+  sudo: yes
+  gather_facts: no
+  roles:
+    - common
+
+# - hosts: web
+#   gather_facts: no
+#   roles:
+#     - nginx
+# 
+# - hosts: database
+#   gather_facts: no
+#   roles:
+#     - mysql

@@ -1,0 +1,2 @@
+# Pubkey for user: {{ item.user }}
+{{ item.ssh_pubkey }}

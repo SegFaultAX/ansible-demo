@@ -1,0 +1,9 @@
+---
+
+- name: restart centos ssh
+  service: name=sshd state=restarted
+  when: ansible_distribution == 'CentOS'
+
+- name: restart ubuntu ssh
+  service: name=ssh state=restarted
+  when: ansible_distribution == 'Ubuntu'
