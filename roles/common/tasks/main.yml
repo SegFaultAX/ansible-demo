@@ -12,10 +12,10 @@
 - include: accounts.yml
 - include: packages.yml
 
-# # /etc/sudoers
-# - name: setup sudoers file
-#   file: src=sudoers dest=/etc/sudoers
-#         owner=root group=root mode=440
+# /etc/sudoers
+- name: setup sudoers file
+  template: src=sudoers dest=/etc/sudoers
+            owner=root group=root mode=440
 
 # /etc/ssh/sshd_config
 - name: setup sshd config file
