@@ -1,0 +1,26 @@
+---
+# Account information
+
+admin_groups: &ops_groups
+  - ops
+  - eng
+  - staff
+
+active_accounts:
+  - full_name: "Foobar User"
+    user: foobar
+    password_crypt: "$6$77mSe.15OgMFa$E.CCaS4HkqAytJyf.HCmq7eV8ggFwtgXYWek9IqxqCUhNYp71WnbFUMKSpBmTk.8gE2TnqgIdP1noqBqrYfyy1"
+    ssh_pubkey: "foobarpubkey"
+    extra_groups: *ops_groups
+
+inactive_accounts: [foobaz]
+
+# Packages
+
+install_ubuntu_packages:
+  - build-essential
+
+remove_ubuntu_packages: []
+
+install_centos_packages: []
+remove_centos_packages: []
