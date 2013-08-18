@@ -6,6 +6,13 @@
 
 Provide cross-platform Ansible roles for Ubuntu and CentOS
 
+### Getting Started
+
+**Note: This project requires Ansible > 1.3.x**
+
+* Provision hosts: `ansible-playbook -i staging provision.yml --ask-sudo-pass`
+* TODO: More playbooks!
+
 ## License
 
 The MIT License
