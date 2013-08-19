@@ -19,8 +19,52 @@ inactive_accounts: [foobaz]
 
 install_ubuntu_packages:
   - build-essential
+  - openssl
+  - libreadline6
+  - libreadline6-dev
+  - curl
+  - git-core
+  - zlib1g
+  - zlib1g-dev
+  - libssl-dev
+  - libyaml-dev
+  - libsqlite3-dev
+  - sqlite3
+  - libxml2-dev
+  - libxslt-dev
+  - autoconf
+  - libc6-dev
+  - ncurses-dev
+  - automake
+  - libtool
+  - bison
+  - rkhunter
+  - logwatch
+  - fail2ban
 
 remove_ubuntu_packages: []
 
-install_centos_packages: []
+install_centos_packages:
+  - gcc
+  - gcc-c++
+  - make
+  - automake
+  - autoconf
+  - curl-devel
+  - openssl-devel
+  - zlib-devel
+  - httpd-devel
+  - apr-devel
+  - apr-util-devel
+  - sqlite-devel
+  - git
+  - readline-devel
+  - curl
+  - libxml2-devel
+  - libxslt-devel
+  - ncurses-devel
+  - libtool
+  - bison
+  - logwatch
+
 remove_centos_packages: []
